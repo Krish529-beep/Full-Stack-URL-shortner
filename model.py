@@ -36,7 +36,7 @@ def incerement_visit_count(short_code):
     
 def get_all_urls():
     with sqlite3.connect(DB_NAME) as conn:
-        curr = conn.execute('SELECT original_url,short_code,visit_count FROM urls ORDER BY id DESE')
+        curr = conn.execute('SELECT original_url, short_code, visit_count FROM urls ORDER BY id DESC')
         return curr.fetchall()
     
 def delete_url_by_code(short_code):
